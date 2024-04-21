@@ -19,3 +19,7 @@ vet:
 # Run golangci-lint against code
 lint:
 	go run github.com/golangci/golangci-lint/cmd/golangci-lint@latest run
+
+docker:
+	-docker network create minecraft
+	docker compose up

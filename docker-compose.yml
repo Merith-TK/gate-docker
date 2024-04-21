@@ -1,0 +1,19 @@
+services:
+  gate:
+    # build:   # Build container from current directory
+    image: cosmtrek/air:latest
+    networks:
+      - minecraft  # Give it access to the minecraft network
+    ports:
+      - 25565:25565   # Expose port 25565 to the host
+    volumes:
+      - ./:/workspace   # Mount the current directory to /workspace in the container
+      # mount docker socket to allow the container to start other containers
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GATE_CONFIG=/workspace/config.yml   # Set the GATE_CONFIG environment variable to /workspace/config.yml
+    working_dir: /workspace   # Set the working directory to /workspace
+
+networks:
+  minecraft:
+    external: true   # Use an existing minecraft network

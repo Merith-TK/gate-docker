@@ -1,12 +1,18 @@
 module github.com/minekube/gate-plugin-template
 
-go 1.22.2
+go 1.22
 
+// force locate dockerGate to ./plugins/dockerGate
+// replace go.minekube.com/gate/plugins => ./plugins/
 require (
 	github.com/docker/docker v26.0.2+incompatible
 	go.minekube.com/common v0.0.5
 	go.minekube.com/gate v0.36.7
-	gopkg.in/yaml.v3 v3.0.1
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)
+
+require (
+	github.com/go-logr/logr v1.4.1
 )
 
 require (
@@ -26,7 +32,6 @@ require (
 	github.com/francoispqt/gojay v1.2.13 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gammazero/deque v0.2.1 // indirect
-	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-logr/zapr v1.3.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect

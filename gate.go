@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/minekube/gate-plugin-template/plugins/docker"
+	"github.com/minekube/gate-plugin-template/plugins/dockerGate"
 	"go.minekube.com/gate/cmd/gate"
 	"go.minekube.com/gate/pkg/edition/java/proxy"
 )
@@ -15,7 +15,7 @@ func main() {
 		// but you can also import your own plugins from other repositories.
 		//
 		// Checkout https://github.com/minekube/awesome for some inspiration.
-		docker.Plugin
+		dockerGate.Plugin,
 
 		// Add more plugins as you like.
 		// They will be initialized in the same order as appended.
